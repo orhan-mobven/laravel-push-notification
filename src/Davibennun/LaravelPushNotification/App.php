@@ -39,4 +39,9 @@ class App {
     public function getFeedback() {
         return $this->pushManager->getFeedback($this->adapter);
     }
+
+    /**
+     * @return \Sly\NotificationPusher\PushManager
+     */
+    public function getPushManager(){return $this->pushManager;}
 }

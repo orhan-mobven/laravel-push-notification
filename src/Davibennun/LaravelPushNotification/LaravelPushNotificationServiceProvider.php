@@ -19,7 +19,10 @@ class LaravelPushNotificationServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('davibennun/laravel-push-notification');
+        $config_path = function_exists('config_path') ? config_path('push-notification.php') : 'push-notification.php';
+        $this->publishes([
+             __DIR__.'/../../config/config.php' => $config_path
+         ], 'config');
     }
 
     /**
